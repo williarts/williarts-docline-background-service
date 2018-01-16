@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="br.com.williarts"
+        version="0.1">
+
+    <name>Serviço background Williarts</name>
+
+    <description>
+        Serviço Williarts
+    </description>
+
+    <license>MIT</license>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+
+    <!-- Load in the core background service -->
+    <dependency id="com.red_folder.phonegap.plugin.backgroundservice" url="https://github.com/Red-Folder/bgs-core.git" commit="9d947a9f1858284b312ad1032de6af590b33fa37" />
+
+    <!-- android -->
+    <platform name="android">
+
+        <js-module src="www/doclineService.js" name="docBackService">
+            <clobbers target="cordova.plugins.docBackService" />
+        </js-module>
+
+        <asset src="www/myService.html" target="myService.html" />
+
+        <source-file src="src/android/DoclineService.java" target-dir="src/br/com/williarts" />
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <service android:name="br.com.williarts.DoclineService">
+                <intent-filter>
+                    <action android:name="br.com.williarts.DoclineService"/>
+                </intent-filter>
+            </service>
+
+        </config-file>
+    </platform>
+</plugin>
