@@ -1,7 +1,7 @@
 {
-  "name": "br.com.williarts",
+  "name": "br.com.williarts.docline.background-service",
   "version": "2.0.0",
-  "description": "Servico Background Williarts",
+  "description": "Serviço para rodar um serviço em background e observar notificações OneSignal.",
   "keywords": [
     "background",
     "cordova"
@@ -15,6 +15,7 @@
       "version": ">=3.0.0"
     }
   ],
-  "author": "Rodrigo Cardoso",
-  "license": "Apache 2.0"
+  "author": "Williarts",
+  "license": "Apache 2.0",
+  "homepage": "https://github.com/williarts/williarts-docline-background-service"
 }

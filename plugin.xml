@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        id="br.com.williarts"
+        id="br.com.williarts.docline.background-service"
         version="0.1">
 
-    <name>Serviço background Williarts</name>
+    <name>Background Service Williarts</name>
 
     <description>
-        Serviço Williarts
+        Plugin para execução e handler das Notificações do OneSignal
     </description>
 
     <license>MIT</license>
@@ -22,11 +22,9 @@
     <!-- android -->
     <platform name="android">
 
-        <js-module src="www/doclineService.js" name="docBackService">
-            <clobbers target="cordova.plugins.docBackService" />
+        <js-module src="www/doclineService.js" name="backService">
+            <clobbers target="cordova.plugins.backService" />
         </js-module>
-
-        <asset src="www/myService.html" target="myService.html" />
 
         <source-file src="src/android/DoclineService.java" target-dir="src/br/com/williarts" />
 
