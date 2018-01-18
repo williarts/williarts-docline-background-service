@@ -43,6 +43,7 @@ class ServiceNotificationHandler implements OneSignal.NotificationReceivedHandle
 			this.service.changeWaiting(false);
 			this.service.changeStarting(true);
 			this.service.dispara();
+			OneSignal.setSubscription(false);
 			this.service.openApp();
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -144,6 +145,7 @@ public class DoclineService extends BackgroundService {
         .setNotificationReceivedHandler(new ServiceNotificationHandler(this))
         .unsubscribeWhenNotificationsAreDisabled(true)
         .init();
+		OneSignal.setSubscription(true);
 	}
 	
 	public void changeHandling(boolean value) {
